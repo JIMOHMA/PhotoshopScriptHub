@@ -11,6 +11,7 @@
   /* Gradient Values */
   --gradient-primary: linear-gradient(69.15deg, #69e0db -3.44%, #236ddb 27.52%, #5d28d1 60.26%);
   --gradient-secondary: linear-gradient(143.35deg, #3f88f5 7.56%, #4611b8 32.68%, #1d005a 60.54%);
+  --gradient-accent: linear-gradient(143.35deg, #ffc107 7.56%, #f79a29 32.68%, #f58f1a 60.54%);
   
   /* UI Colors */
   --light-grey: #F5F5F5;
@@ -71,6 +72,7 @@ a {
   text-decoration: none;
   transition: var(--transition);
 }
+
 
 a:hover {
   color: #007acc;
@@ -142,6 +144,9 @@ p {
 
 .btn:hover:before {
   width: 100%;
+
+  color: var(--light-grey);
+  background: linear-gradient(90deg, #ffba43 -24.69%, #e12213 126.23%);
 }
 
 .btn-primary {
@@ -152,6 +157,9 @@ p {
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(93, 40, 209, 0.2);
+
+  color: var(--light-grey);
+  background: linear-gradient(90deg, #ffba43 -24.69%, #e12213 126.23%);
 }
 
 .btn-secondary {
@@ -162,6 +170,9 @@ p {
 .btn-secondary:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(93, 40, 209, 0.2);
+
+  color: var(--light-grey);
+  background: linear-gradient(90deg, #ffba43 -24.69%, #e12213 126.23%);
 }
 
 .btn-outline {
@@ -257,7 +268,7 @@ p {
 }
 
 .nav-cta .btn {
-  padding: 10px 20px;
+  padding: 10px 10px;
   margin-left: var(--spacing-lg);
   font-size: 0.9rem;
 }
@@ -350,6 +361,8 @@ p {
 
 .hero-image {
   max-width: 500px;
+  /* max-height: 500px; */
+  /* height: 700px; */
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   box-shadow: var(--box-shadow-lg);
@@ -854,7 +867,7 @@ p {
 .about-text p {
   margin-bottom: 20px;
   color: var(--dark-grey);
-  line-height: 1.7;
+  line-height: 1.9;
   font-size: 1.1rem;
 }
 
@@ -976,6 +989,13 @@ p {
 
 .testimonial {
   padding: var(--spacing-lg);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  row-gap: 20px;
 }
 
 .testimonial-content {
@@ -2119,6 +2139,19 @@ input:focus, textarea:focus, select:focus {
   color: var(--grey);
 }
 
+.gradient-text {
+  background: var(--gradient-accent);
+  color: black;
+  padding: 2.5px 10px;
+  border-radius: 5px;
+  margin: 0 px;
+}
+
+#a-btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+}
+
 /* ===== Responsive Styles ===== */
 @media (max-width: 992px) {
   .hero-section .container {
@@ -2217,6 +2250,11 @@ input:focus, textarea:focus, select:focus {
 }
 
 @media (max-width: 480px) {
+
+  .hero-section {
+    padding: 120px 0 120px;
+  }
+
   .hero-cta, .modal-actions {
     flex-direction: column;
     gap: var(--spacing-sm);

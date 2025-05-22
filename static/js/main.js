@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     currentTestimonial = 0;
                 }
                 showTestimonial(currentTestimonial);
-            }, 5000);
+            }, 10000);
             
             // Stop auto-rotation when user interacts with the slider
             [prevTestimonialBtn, nextTestimonialBtn].forEach(btn => {

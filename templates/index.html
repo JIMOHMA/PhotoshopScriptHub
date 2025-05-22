@@ -27,7 +27,17 @@
                             <path d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6Z" stroke="url(#gradient)" stroke-width="2"/>
                             <path d="M7 12H17M12 7V17" stroke="url(#gradient)" stroke-width="2" stroke-linecap="round"/>
                         </svg>
-                        <span>PluginCrafter</span>
+                        <!-- <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#ff7e5f" />
+                                    <stop offset="100%" stop-color="#feb47b" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6Z" stroke="url(#orangeGradient)" stroke-width="2"/>
+                            <path d="M7 12H17M12 7V17" stroke="url(#orangeGradient)" stroke-width="2" stroke-linecap="round"/>
+                        </svg> -->
+                        <span>PlugScript</span>
                     </a>
                 </div>
                 <nav class="main-nav">
@@ -56,8 +66,10 @@
     <section id="home" class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <h1>Photoshop Automation Expert. <span style="color: var(--accent-color);">Custom Plugins & Scripts</span> That Save You Hours.</h1>
-                <p>I help digital artists, digital creators, print shops, and eCommerce sellers save hours by building custom Photoshop plugins and scripts that automate repetitive tasks and boost productivity.</p>
+                <!-- <h1>Photoshop Automation Expert. <span style="color: var(--accent-color);">Custom Plugins & Scripts</span> That Save You Hours.</h1> -->
+                <h1><span style="color: var(--accent-color);">Custom Plugins & Scripts</span> That Save You Hours.</h1>
+                <!-- <p>We help digital artists, digital creators, print shops, and eCommerce sellers save hours by building custom Photoshop plugins and scripts that automate repetitive tasks and boost productivity.</p> -->
+                <p>We offer custom Photoshop plugins and scripts that automate repetitive tasks and boost productivity. Our services are catered to digital artists, digital creators, print shops, eCommerce sellers, and other business clients.</p>
                 <div class="hero-cta">
                     <a href="{{ url_for('booking_page') }}" class="btn btn-primary">Let's Build Your Plugin</a>
                     <a href="{{ url_for('booking_page') }}" class="btn btn-secondary">Let's Build Your Scripts</a>
@@ -144,8 +156,9 @@
         <div class="container">
             <h2>See a Plugin in Action</h2>
             <div class="video-container">
-                <iframe id="demo-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1" title="Photoshop Plugin Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="demo-video" src="https://www.youtube.com/embed/CL4qdBnK2fo?autoplay=1&mute=1" title="Photoshop Plugin Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+
             <p class="demo-description">Watch how this batch processing plugin can handle hundreds of images in minutes, not hours. Real-time demonstration of smart object replacement and export automation.</p>
         </div>
     </section>
@@ -267,11 +280,12 @@
                     <img src="https://pixabay.com/get/g01f99ef9a26c45f81662308abd8d3738628b19623afde98b299624bce2ab61bb4bfb95fa4f2e3e5bbb2af9a118ebe64d107453560e1a7585e9e784d0982f4870_1280.jpg" alt="Developer of Photoshop Plugins" />
                 </div>
                 <div class="about-text">
-                    <h2>Hi, I'm John Doe — Developer of Photoshop Plugins & Automation Scripts</h2>
-                    <p>I specialize in building automation solutions inside Photoshop, from lightweight scripts to full-scale plugins with rich UIs. My tools are used by digital artists, print shops, and eCommerce sellers to scale their creative output and reduce time spent on repetitive design work.</p>
-                    <p>With a background in full-stack development and years of experience building Photoshop plugins using JavaScript, Adobe UXP, Adobe ExtendScript, React, NodeJS and ExpressJS, I turn time-consuming creative tasks into smart, automated solutions. My mission? Help creative professionals and businesses scale their work without scaling their effort.</p>
+                    <h2>Hi, I'm MajDev — Developer of Photoshop Plugins & Automation Scripts</h2>
+                    <p>I specialize in building automation solutions inside Photoshop, from lightweight scripts to full-scale plugins with rich UIs. I've worked with digital artists, print shops, and eCommerce sellers to scale their creative output and reduce time spent on repetitive design work.</p>
+
+                    <p>With a background in full-stack development and years of experience building Photoshop plugins using <span class="gradient-text">JavaScript</span>, <span class="gradient-text">Adobe UXP</span>, <span class="gradient-text">ReactJS</span>, <span class="gradient-text">Adobe ExtendScript</span>, <span class="gradient-text">HTML</span>, <span class="gradient-text">CSS</span>, <span class="gradient-text">NodeJS</span> and <span class="gradient-text">ExpressJS</span>, I turn time-consuming creative tasks into smart, automated solutions. My mission? Help creative professionals and businesses scale their work without scaling their effort.</p>
                     
-                    <div class="credentials">
+                    <!-- <div class="credentials">
                         <div class="credential">
                             <i class="fas fa-check-circle"></i>
                             <span>Adobe Platform Experience</span>
@@ -284,7 +298,7 @@
                             <i class="fas fa-check-circle"></i>
                             <span>Trusted by creative professionals worldwide</span>
                         </div>
-                    </div>
+                    </div> -->
                     
                     <a href="{{ url_for('booking_page') }}" class="btn btn-primary">Book a Consultation</a>
                 </div>
@@ -300,11 +314,13 @@
             <div class="testimonials-slider">
                 <div class="testimonial">
                     <div class="testimonial-content">
-                        <p>"This plugin completely transformed my business. What used to take me 3 days now takes 10 minutes!"</p>
+                        <p>"It was a pleasure to work with MajDev. He was attentive to my needs and concerns, and delivered exceptional work remarkably quickly. </p>
+                        
+                        <p>I highly recommend MajDev and will certainly work with him again in the future."</p>
                         <div class="testimonial-author">
                             <div class="author-info">
-                                <span class="author-name">Sarah M.</span>
-                                <span class="author-title">Digital Shop Owner</span>
+                                <span class="author-name">Brian H.</span>
+                                <span class="author-title">Carved Canvas</span>
                             </div>
                         </div>
                     </div>
@@ -312,11 +328,11 @@
                 
                 <div class="testimonial">
                     <div class="testimonial-content">
-                        <p>"The batch processing plugin John created saved my print shop countless hours. Incredible ROI."</p>
+                        <p>"100% hire MajDev! I had a specific ask according to my understanding of the problem set. MajDev, with his experience and skill, took the solution to the next level...beyond anything I had hoped for. Thank you!!"</p>
                         <div class="testimonial-author">
                             <div class="author-info">
-                                <span class="author-name">Michael T.</span>
-                                <span class="author-title">Print Shop Owner</span>
+                                <span class="author-name">Courtney G.</span>
+                                <span class="author-title">Earth Views</span>
                             </div>
                         </div>
                     </div>
@@ -324,11 +340,11 @@
                 
                 <div class="testimonial">
                     <div class="testimonial-content">
-                        <p>"Working with John was a game-changer. He understood exactly what I needed and delivered a plugin that exceeded my expectations."</p>
+                        <p>"Working with MajDev was a game-changer. He understood exactly what I needed and delivered a plugin that exceeded my expectations."</p>
                         <div class="testimonial-author">
                             <div class="author-info">
-                                <span class="author-name">Jessica K.</span>
-                                <span class="author-title">Freelance Designer</span>
+                                <span class="author-name">Austin K.</span>
+                                <span class="author-title">Luxury Fabrics</span>
                             </div>
                         </div>
                     </div>
@@ -383,7 +399,7 @@
                         <i class="fas fa-plus"></i>
                     </button>
                     <div class="accordion-content">
-                        <p>Simple plugins take about 1–3 days. Complex plugins with advanced workflow can take 4–5 days.</p>
+                        <p>Simple plugins take about 1 – 3 days. Complex plugins with advanced workflow can take 4 – 7 days.</p>
                     </div>
                 </div>
                 
@@ -500,8 +516,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <a href="{{ url_for('index') }}">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a href="{{ url_for('index') }}" style="display: flex; align-items: center; gap: 10px;">
+                        <!-- <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="gradient-footer" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" stop-color="#69e0db" />
@@ -511,6 +527,16 @@
                             </defs>
                             <path d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6Z" stroke="url(#gradient-footer)" stroke-width="2"/>
                             <path d="M7 12H17M12 7V17" stroke="url(#gradient-footer)" stroke-width="2" stroke-linecap="round"/>
+                        </svg> -->
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#ff7e5f" />
+                                    <stop offset="100%" stop-color="#feb47b" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6Z" stroke="url(#orangeGradient)" stroke-width="2"/>
+                            <path d="M7 12H17M12 7V17" stroke="url(#orangeGradient)" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                         <span>PluginCrafter</span>
                     </a>
@@ -533,32 +559,32 @@
                         <h3>Services</h3>
                         <ul>
                             <li>Custom Photoshop Plugins</li>
-                            <li>Automation Scripts</li>
+                            <li>Custom Automation Scripts</li>
                             <li>Workflow Optimization</li>
                             <li>UI Panel Development</li>
-                            <li>Plugin Maintenance</li>
+                            <!-- <li>Plugin Maintenance</li> -->
                         </ul>
                     </div>
                     <div class="footer-contact">
                         <h3>Contact</h3>
                         <ul>
-                            <li><i class="fas fa-envelope"></i> hello@plugincrafter.com</li>
-                            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                            <li><i class="fas fa-map-marker-alt"></i> San Francisco, CA</li>
-                            <li class="social-links">
+                            <li><i class="fas fa-envelope"></i> business4jimoh@gmail.com</li>
+                            <li><i class="fas fa-phone"></i> +1 (905) 536-5547</li>
+                            <li><i class="fas fa-map-marker-alt"></i>Toronto ON, Canada</li>
+                            <!-- <li class="social-links">
                                 <a href="#"><i class="fab fa-twitter"></i></a>
                                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
                                 <a href="#"><i class="fab fa-github"></i></a>
                                 <a href="#"><i class="fab fa-youtube"></i></a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>Crafted with <span class="heart">❤️</span> by John Doe — Custom Photoshop Plugin Developer</p>
-                <p>Let's save you time, one smart plugin at a time.</p>
-                <p>&copy; 2025 PluginCrafter. All rights reserved.</p>
+                <p>Crafted with <span class="heart">❤️</span> by MajDev — Custom Photoshop Plugin Developer</p>
+                <p>Let's save you time, one smart plugin, and one automation script at a time.</p>
+                <p>&copy; 2025 PlugScript. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const style = document.createElement('style');
     style.textContent = `
         .error-message {
-            color: var(--error-color);
+            color: var(--error-color-secondary);
             font-size: 0.9rem;
             margin-top: 5px;
             animation: fadeIn 0.3s ease;
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         input.error, textarea.error, select.error {
-            border-color: var(--error-color) !important;
+            border-color: var(--error-color-secondary) !important;
         }
     `;
     document.head.appendChild(style);

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Consultation | Photoshop Plugin Developer</title>
+    <meta name="description" content="Schedule a consultation to discuss your custom Photoshop plugin or script requirements.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="{{ url_for('index') }}">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6Z" stroke="#0099FF" stroke-width="2"/>
+                            <path d="M7 12H17M12 7V17" stroke="#0099FF" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span>PluginCrafter</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="{{ url_for('index') }}#home" class="nav-link">Home</a></li>
+                        <li><a href="{{ url_for('index') }}#services" class="nav-link">Services</a></li>
+                        <li><a href="{{ url_for('index') }}#portfolio" class="nav-link">Portfolio</a></li>
+                        <li><a href="{{ url_for('index') }}#about" class="nav-link">About</a></li>
+                        <li><a href="{{ url_for('shop') }}" class="nav-link">Shop</a></li>
+                        <li><a href="{{ url_for('tutorial_page') }}" class="nav-link">Tutorials</a></li>
+                        <li><a href="{{ url_for('booking_page') }}" class="nav-link active">Book a Call</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Booking Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Schedule a Consultation</h1>
+            <p>Let's discuss your Photoshop plugin needs and find the perfect solution for your workflow</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-container">
+                <div class="booking-info">
+                    <h2>What to Expect</h2>
+                    <div class="booking-process">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-details">
+                                <h3>Initial Consultation</h3>
+                                <p>We'll discuss your workflow challenges and requirements in a 30-minute video call.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-details">
+                                <h3>Solution Proposal</h3>
+                                <p>I'll create a detailed proposal including features, timeline, and pricing.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-details">
+                                <h3>Development</h3>
+                                <p>Once approved, I'll build your custom solution with regular progress updates.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-details">
+                                <h3>Delivery & Support</h3>
+                                <p>You'll receive your plugin with documentation and 30 days of support.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial booking-testimonial">
+                        <div class="testimonial-content">
+                            <p>"The consultation process was smooth and professional. John asked all the right questions to understand my needs."</p>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <span class="author-name">David L.</span>
+                                    <span class="author-title">Product Photographer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="booking-form">
+                    <h2>Book Your Slot</h2>
+                    <form action="{{ url_for('book_appointment') }}" method="POST" id="booking-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Preferred Date</label>
+                                <input type="date" id="date" name="date" required min="{{ today }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Preferred Time</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Select a time</option>
+                                    <option value="09:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="project_type">Project Type</label>
+                            <select id="project_type" name="project_type" required>
+                                <option value="">Select a project type</option>
+                                <option value="batch_automation">Batch Automation Plugin</option>
+                                <option value="smart_object">Smart Object Manipulation</option>
+                                <option value="custom_ui">Custom UI Panel</option>
+                                <option value="api_integration">API Integration</option>
+                                <option value="script">Automation Script</option>
+                                <option value="other">Other / Not Sure</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="details">Project Details</label>
+                            <textarea id="details" name="details" rows="5" placeholder="Please describe your workflow challenges and what you'd like the plugin to accomplish..." required></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">I agree to the <a href="#">terms and conditions</a></label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Schedule Consultation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section booking-faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>How much does a custom plugin cost?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Simple plugins typically range from $300-$500, while complex plugins with advanced UI and multiple features can range from $600-$1,500. I'll provide a detailed quote after our consultation.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>What's your development timeline?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Most projects are completed within 1-2 weeks from approval. Simple scripts can be delivered in as little as 2-3 days, while complex plugins may take 2-3 weeks.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Do I need to prepare anything for the consultation?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>If possible, prepare a brief description of your current workflow and the challenge you're facing. Screenshots or recordings of your process are extremely helpful but not required.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>How do payments work?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>I typically require a 50% deposit to begin work, with the remaining 50% due upon completion and delivery. For larger projects, we can arrange milestone-based payments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="{{ url_for('index') }}">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6Z" stroke="#0099FF" stroke-width="2"/>
+                            <path d="M7 12H17M12 7V17" stroke="#0099FF" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span>PluginCrafter</span>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-nav">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="{{ url_for('index') }}#home">Home</a></li>
+                            <li><a href="{{ url_for('index') }}#services">Services</a></li>
+                            <li><a href="{{ url_for('index') }}#portfolio">Portfolio</a></li>
+                            <li><a href="{{ url_for('index') }}#about">About</a></li>
+                            <li><a href="{{ url_for('shop') }}">Shop</a></li>
+                            <li><a href="{{ url_for('tutorial_page') }}">Tutorials</a></li>
+                            <li><a href="{{ url_for('booking_page') }}">Book a Call</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-services">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>Custom Photoshop Plugins</li>
+                            <li>Automation Scripts</li>
+                            <li>Workflow Optimization</li>
+                            <li>UI Panel Development</li>
+                            <li>Plugin Maintenance</li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i> hello@plugincrafter.com</li>
+                            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                            <li><i class="fas fa-map-marker-alt"></i> San Francisco, CA</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Crafted with ❤️ by John Doe — Custom Photoshop Plugin Developer</p>
+                <p>Let's save you time, one smart plugin at a time.</p>
+                <p>&copy; 2023 PluginCrafter. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">
+                        {{ message }}
+                        <button class="close-flash">&times;</button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/booking.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photoshop Automation Expert | Custom Plugins & Scripts</title>
+    <meta name="description" content="Custom Photoshop plugins and automation scripts to save time for digital artists, creators, print shops, and eCommerce sellers.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="{{ url_for('index') }}">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6Z" stroke="#0099FF" stroke-width="2"/>
+                            <path d="M7 12H17M12 7V17" stroke="#0099FF" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span>PluginCrafter</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+                        <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
+                        <li><a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a></li>
+                        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                        <li><a href="{{ url_for('shop') }}" class="nav-link">Shop</a></li>
+                        <li><a href="{{ url_for('tutorial_page') }}" class="nav-link">Tutorials</a></li>
+                        <li><a href="{{ url_for('booking_page') }}" class="nav-link">Book a Call</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Photoshop Automation Expert. Custom Plugins & Scripts That Save You Hours.</h1>
+                <p>I help digital artists, digital creators, print shops, and eCommerce sellers/shops save hours by building custom Photoshop plugins and Scripts that automate repetitive tasks and boost productivity.</p>
+                <div class="hero-cta">
+                    <a href="{{ url_for('booking_page') }}" class="btn btn-primary">🚀 Let's Build Your Plugin</a>
+                    <a href="{{ url_for('booking_page') }}" class="btn btn-secondary">🚀 Let's Build Your Scripts</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://pixabay.com/get/g37db9f77c63e8c8a94e2bb61e65fac44ce765c54a0e3365a17c0e11397b6b6d4f199a8a088e92e397bc0fb6134e6f07965a6d811537bf6fd249586cf0e75c361_1280.jpg" alt="Photoshop plugins development" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Custom Photoshop Plugins Tailored to Your Workflow</h2>
+            <p class="section-intro">Whether you're a digital seller embedding hundreds of mockups or a designer repeating the same actions daily, I develop intelligent Photoshop plugins that do the heavy lifting for you.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H10V10H4V4Z" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 4H20V10H14V4Z" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 14H10V20H4V14Z" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 14H20V20H14V14Z" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>🔁 Batch Automation Tools</h3>
+                    <p>Process hundreds of files with custom rules and settings in just a few clicks.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 16V8.00002C20.9996 7.6493 20.9071 7.30483 20.7315 7.00119C20.556 6.69754 20.3037 6.44539 20 6.27002L13 2.27002C12.696 2.09449 12.3511 2.00208 12 2.00208C11.6489 2.00208 11.304 2.09449 11 2.27002L4 6.27002C3.69626 6.44539 3.44398 6.69754 3.26846 7.00119C3.09294 7.30483 3.00036 7.6493 3 8.00002V16C3.00036 16.3508 3.09294 16.6952 3.26846 16.9989C3.44398 17.3025 3.69626 17.5547 4 17.73L11 21.73C11.304 21.9056 11.6489 21.998 12 21.998C12.3511 21.998 12.696 21.9056 13 21.73L20 17.73C20.3037 17.5547 20.556 17.3025 20.7315 16.9989C20.9071 16.6952 20.9996 16.3508 21 16Z" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.27002 6.96002L12 12.01L20.73 6.96002" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 22.08V12" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>📦 Smart Object Manipulation</h3>
+                    <p>Automatically replace smart objects in bulk with custom transformations and effects.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 3H7C5.89543 3 5 3.89543 5 5V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V5C19 3.89543 18.1046 3 17 3Z" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 7H16" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 11H16" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 15H12" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>🧩 Custom UI Panels</h3>
+                    <p>Create intuitive interfaces for your specific workflows directly within Photoshop.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 13C11.1046 13 12 12.1046 12 11C12 9.89543 11.1046 9 10 9C8.89543 9 8 9.89543 8 11C8 12.1046 8.89543 13 10 13Z" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20 4H4C2.89543 4 2 4.89543 2 6V18C2 19.1046 2.89543 20 4 20H20C21.1046 20 22 19.1046 22 18V6C22 4.89543 21.1046 4 20 4Z" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 15C15.1046 15 16 14.1046 16 13C16 11.8954 15.1046 11 14 11" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>🌐 API-integrated Workflows</h3>
+                    <p>Connect Photoshop to external services, databases, and other tools for seamless workflows.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 4L6 12L18 20V4Z" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>⚙️ Time-saving Script Extensions</h3>
+                    <p>Automate repetitive tasks with custom scripts that run with a single click.</p>
+                </div>
+            </div>
+            
+            <div class="service-cta">
+                <a href="#portfolio" class="btn btn-primary">See Examples of My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Demo Section -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <h2>See a Plugin in Action</h2>
+            <div class="video-container">
+                <iframe id="demo-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1" title="Photoshop Plugin Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="demo-description">Watch how this batch processing plugin can handle hundreds of images in minutes, not hours. Real-time demonstration of smart object replacement and export automation.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2>Real Plugins. Real Results.</h2>
+            
+            <div class="case-studies">
+                <div class="case-study">
+                    <div class="case-study-content">
+                        <h3>Etsy Seller's Mockup Solution</h3>
+                        <div class="case-study-details">
+                            <div class="case-item">
+                                <span class="case-label">🎯 Problem:</span>
+                                <p>An Etsy seller spent 10+ hours weekly editing mockups manually.</p>
+                            </div>
+                            <div class="case-item">
+                                <span class="case-label">💡 Solution:</span>
+                                <p>Built a plugin that embedded 200+ images into PSDs automatically.</p>
+                            </div>
+                            <div class="case-item">
+                                <span class="case-label">📈 Result:</span>
+                                <p>Saved 40+ hours/month, leading to faster product launches.</p>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn btn-secondary">Want Something Similar?</a>
+                    </div>
+                    <div class="case-study-image">
+                        <img src="https://pixabay.com/get/g6adbc5943af7265c03ef2433913a2aef3a35cda27a320b823c3fb285a4617eacdbd466371ecbaf6d5e03a73247afd094c0b290ddc02304c35de0965f4edd5930_1280.jpg" alt="Etsy seller's mockup solution" />
+                    </div>
+                </div>
+                
+                <div class="case-study reverse">
+                    <div class="case-study-content">
+                        <h3>Print Shop Automation</h3>
+                        <div class="case-study-details">
+                            <div class="case-item">
+                                <span class="case-label">🎯 Problem:</span>
+                                <p>A print shop struggled with file preparation for large format printing.</p>
+                            </div>
+                            <div class="case-item">
+                                <span class="case-label">💡 Solution:</span>
+                                <p>Created a custom panel with presets for various print formats and color profiles.</p>
+                            </div>
+                            <div class="case-item">
+                                <span class="case-label">📈 Result:</span>
+                                <p>Reduced file preparation time by 70% and eliminated costly printing errors.</p>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn btn-secondary">Want Something Similar?</a>
+                    </div>
+                    <div class="case-study-image">
+                        <img src="https://pixabay.com/get/gfe873df2e8a07ca984e6c14f2c3a4f362621cbc641618d383e4f7abd7855fedcac6de0ed2327cb149c0104236c0268427b8fa43154c6bd52a7ee9127a1a8daeb_1280.jpg" alt="Print shop automation" />
+                    </div>
+                </div>
+                
+                <div class="case-study">
+                    <div class="case-study-content">
+                        <h3>Digital Artist's Layer Manager</h3>
+                        <div class="case-study-details">
+                            <div class="case-item">
+                                <span class="case-label">🎯 Problem:</span>
+                                <p>A digital artist wasted time organizing complex layered illustrations.</p>
+                            </div>
+                            <div class="case-item">
+                                <span class="case-label">💡 Solution:</span>
+                                <p>Developed a layer management plugin with smart grouping and naming features.</p>
+                            </div>
+                            <div class="case-item">
+                                <span class="case-label">📈 Result:</span>
+                                <p>Saved 5+ hours per project and improved file organization consistency.</p>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn btn-secondary">Want Something Similar?</a>
+                    </div>
+                    <div class="case-study-image">
+                        <img src="https://pixabay.com/get/g24db8762099882e78f3e332f488e6a39a558ec5025f853e6266d559e0fa69f1ad2fedaa3165ff4f7b1e2c9ea8ce2b179c2be9503b97e9db2bd90ac1fdf8f613c_1280.jpg" alt="Digital artist's layer manager" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Preview Section -->
+    <section id="shop-preview" class="shop-preview-section">
+        <div class="container">
+            <h2>Ready-to-Use Plugins</h2>
+            <p class="section-intro">Explore my collection of Photoshop plugins designed to solve common workflow challenges.</p>
+            
+            <div class="plugins-grid">
+                {% for plugin in plugins %}
+                <div class="plugin-card" data-plugin-id="{{ plugin.id }}">
+                    <div class="plugin-image">
+                        <img src="{{ plugin.image }}" alt="{{ plugin.name }}" />
+                    </div>
+                    <div class="plugin-info">
+                        <h3>{{ plugin.name }}</h3>
+                        <p>{{ plugin.description }}</p>
+                        <span class="plugin-price">{{ plugin.price }}</span>
+                        <button class="btn btn-secondary view-plugin-details">View Details</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="shop-cta">
+                <a href="{{ url_for('shop') }}" class="btn btn-primary">Browse All Plugins</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://pixabay.com/get/g01f99ef9a26c45f81662308abd8d3738628b19623afde98b299624bce2ab61bb4bfb95fa4f2e3e5bbb2af9a118ebe64d107453560e1a7585e9e784d0982f4870_1280.jpg" alt="Developer of Photoshop Plugins" />
+                </div>
+                <div class="about-text">
+                    <h2>Hi, I'm John Doe — Developer of Photoshop Plugins & Automation Scripts</h2>
+                    <p>I specialize in building automation solutions inside Photoshop, from lightweight scripts to full-scale plugins with rich UIs. My tools are used by digital artists, print shops, and eCommerce sellers to scale their creative output and reduce time spent on repetitive design work.</p>
+                    <p>With a background in full-stack development and years of experience building Photoshop plugins using JavaScript, Adobe UXP, Adobe ExtendScript, React, NodeJS and ExpressJS, I turn time-consuming creative tasks into smart, automated solutions. My mission? Help creative professionals and businesses scale their work without scaling their effort.</p>
+                    
+                    <div class="credentials">
+                        <div class="credential">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Adobe Platform Experience</span>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Plugins used by Etsy shops, freelancers, and agencies</span>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Trusted by creative professionals worldwide</span>
+                        </div>
+                    </div>
+                    
+                    <a href="{{ url_for('booking_page') }}" class="btn btn-primary">Book a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2>What Clients Say</h2>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"This plugin completely transformed my business. What used to take me 3 days now takes 10 minutes!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <span class="author-name">Sarah M.</span>
+                                <span class="author-title">Digital Shop Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The batch processing plugin John created saved my print shop countless hours. Incredible ROI."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <span class="author-name">Michael T.</span>
+                                <span class="author-title">Print Shop Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Working with John was a game-changer. He understood exactly what I needed and delivered a plugin that exceeded my expectations."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <span class="author-name">Jessica K.</span>
+                                <span class="author-title">Freelance Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-nav">
+                <button class="prev-testimonial"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-testimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorial Preview Section -->
+    <section id="tutorial-preview" class="tutorial-preview-section">
+        <div class="container">
+            <h2>Learn Photoshop Automation</h2>
+            <p class="section-intro">Check out my latest tutorials on Photoshop plugin and script development.</p>
+            
+            <div class="tutorials-grid">
+                {% for tutorial in tutorials[:3] %}
+                <div class="tutorial-card">
+                    <div class="tutorial-video">
+                        <img src="https://img.youtube.com/vi/{{ tutorial.youtube_id }}/maxresdefault.jpg" alt="{{ tutorial.title }}" />
+                        <a href="https://www.youtube.com/watch?v={{ tutorial.youtube_id }}" class="play-button" target="_blank">
+                            <i class="fas fa-play"></i>
+                        </a>
+                    </div>
+                    <div class="tutorial-info">
+                        <h3>{{ tutorial.title }}</h3>
+                        <p>{{ tutorial.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="tutorial-cta">
+                <a href="{{ url_for('tutorial_page') }}" class="btn btn-primary">View All Tutorials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>How long does a plugin take to develop?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Simple plugins take about 1–3 days. Complex plugins with advanced workflow can take 4–5 days.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Do you support after delivery?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes. I provide 30 days of support after delivery, with options for ongoing maintenance.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Will the plugin work on both Windows and Mac?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Absolutely — UXP-based plugins work cross-platform.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>What information do you need to get started?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>A clear description of your workflow challenge, examples of the manual process you want to automate, and any specific requirements or preferences. Screen recordings of your current process are extremely helpful.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Can you modify an existing plugin?</span>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, I can modify and extend plugins that have accessible source code, including plugins I've previously developed for you or open-source plugins.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Ready to Build Your Plugin?</h2>
+            <p class="section-intro">Let's bring your workflow to life with a plugin that saves time, reduces errors, and makes you more productive. Fill out the form below and I'll get back to you within 24 hours.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>hello@plugincrafter.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>San Francisco, CA</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form action="{{ url_for('submit_contact') }}" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Describe your plugin idea</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="file" class="upload-label">
+                                <i class="fas fa-upload"></i> 
+                                <span>Upload a reference or screen recording (optional)</span>
+                            </label>
+                            <input type="file" id="file" name="file" class="file-upload">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Get Started</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="{{ url_for('index') }}">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6Z" stroke="#0099FF" stroke-width="2"/>
+                            <path d="M7 12H17M12 7V17" stroke="#0099FF" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span>PluginCrafter</span>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-nav">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="{{ url_for('shop') }}">Shop</a></li>
+                            <li><a href="{{ url_for('tutorial_page') }}">Tutorials</a></li>
+                            <li><a href="{{ url_for('booking_page') }}">Book a Call</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-services">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>Custom Photoshop Plugins</li>
+                            <li>Automation Scripts</li>
+                            <li>Workflow Optimization</li>
+                            <li>UI Panel Development</li>
+                            <li>Plugin Maintenance</li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i> hello@plugincrafter.com</li>
+                            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                            <li><i class="fas fa-map-marker-alt"></i> San Francisco, CA</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Crafted with ❤️ by John Doe — Custom Photoshop Plugin Developer</p>
+                <p>Let's save you time, one smart plugin at a time.</p>
+                <p>&copy; 2023 PluginCrafter. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Plugin Details Modal -->
+    <div id="plugin-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-plugin-image" src="" alt="Plugin">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modal-plugin-name"></h2>
+                    <p id="modal-plugin-description"></p>
+                    <div class="modal-price" id="modal-plugin-price"></div>
+                    
+                    <div class="features-container">
+                        <h3>Features</h3>
+                        <ul id="modal-plugin-features"></ul>
+                    </div>
+                    
+                    <div class="suitable-container">
+                        <h3>Suitable For</h3>
+                        <ul id="modal-plugin-suitable"></ul>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                        <a href="{{ url_for('booking_page') }}" class="btn btn-secondary">Get a Custom Version</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">
+                        {{ message }}
+                        <button class="close-flash">&times;</button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/modal.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/form-validation.js') }}"></script>
+</body>
+</html>

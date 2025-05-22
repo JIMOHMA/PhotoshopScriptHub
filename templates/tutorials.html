@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photoshop Automation Tutorials | PluginCrafter</title>
+    <meta name="description" content="Free tutorials on Photoshop automation, plugin development, and scripting techniques.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="{{ url_for('index') }}">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6Z" stroke="#0099FF" stroke-width="2"/>
+                            <path d="M7 12H17M12 7V17" stroke="#0099FF" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span>PluginCrafter</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="{{ url_for('index') }}#home" class="nav-link">Home</a></li>
+                        <li><a href="{{ url_for('index') }}#services" class="nav-link">Services</a></li>
+                        <li><a href="{{ url_for('index') }}#portfolio" class="nav-link">Portfolio</a></li>
+                        <li><a href="{{ url_for('index') }}#about" class="nav-link">About</a></li>
+                        <li><a href="{{ url_for('shop') }}" class="nav-link">Shop</a></li>
+                        <li><a href="{{ url_for('tutorial_page') }}" class="nav-link active">Tutorials</a></li>
+                        <li><a href="{{ url_for('booking_page') }}" class="nav-link">Book a Call</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tutorials Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Photoshop Automation Tutorials</h1>
+            <p>Learn how to develop your own Photoshop plugins and scripts with these detailed tutorials</p>
+        </div>
+    </section>
+
+    <!-- Tutorials Section -->
+    <section class="tutorials-section">
+        <div class="container">
+            <div class="tutorials-filters">
+                <div class="filter-group">
+                    <label for="topic-filter">Topic:</label>
+                    <select id="topic-filter">
+                        <option value="all">All Topics</option>
+                        <option value="plugin-dev">Plugin Development</option>
+                        <option value="scripting">Scripting</option>
+                        <option value="uxp">UXP Framework</option>
+                        <option value="automation">Automation</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="level-filter">Skill Level:</label>
+                    <select id="level-filter">
+                        <option value="all">All Levels</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="tutorials-grid">
+                {% for tutorial in tutorials %}
+                <div class="tutorial-card">
+                    <div class="tutorial-video">
+                        <img src="https://img.youtube.com/vi/{{ tutorial.youtube_id }}/maxresdefault.jpg" alt="{{ tutorial.title }}" />
+                        <a href="https://www.youtube.com/watch?v={{ tutorial.youtube_id }}" class="play-button" target="_blank">
+                            <i class="fas fa-play"></i>
+                        </a>
+                    </div>
+                    <div class="tutorial-info">
+                        <h3>{{ tutorial.title }}</h3>
+                        <p>{{ tutorial.description }}</p>
+                        <a href="https://www.youtube.com/watch?v={{ tutorial.youtube_id }}" class="btn btn-secondary" target="_blank">Watch Tutorial</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-section">
+        <div class="container">
+            <h2>Useful Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Adobe UXP Documentation</h3>
+                    <p>Official documentation for Adobe's UXP development framework.</p>
+                    <a href="https://developer.adobe.com/photoshop/uxp/" class="btn btn-outline" target="_blank">Visit Resource</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>ExtendScript Documentation</h3>
+                    <p>Learn about ExtendScript for Adobe application automation.</p>
+                    <a href="https://extendscript.docsforadobe.dev/" class="btn btn-outline" target="_blank">Visit Resource</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Plugin Development Guide</h3>
+                    <p>My comprehensive guide to building professional Photoshop plugins.</p>
+                    <a href="#" class="btn btn-outline">Download Guide</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section class="subscribe-section">
+        <div class="container">
+            <div class="subscribe-content">
+                <h2>Get New Tutorial Alerts</h2>
+                <p>Subscribe to be notified when I publish new tutorials and resources.</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <p class="privacy-note">I respect your privacy and will never share your email.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="{{ url_for('index') }}">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6Z" stroke="#0099FF" stroke-width="2"/>
+                            <path d="M7 12H17M12 7V17" stroke="#0099FF" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span>PluginCrafter</span>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-nav">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="{{ url_for('index') }}#home">Home</a></li>
+                            <li><a href="{{ url_for('index') }}#services">Services</a></li>
+                            <li><a href="{{ url_for('index') }}#portfolio">Portfolio</a></li>
+                            <li><a href="{{ url_for('index') }}#about">About</a></li>
+                            <li><a href="{{ url_for('shop') }}">Shop</a></li>
+                            <li><a href="{{ url_for('tutorial_page') }}">Tutorials</a></li>
+                            <li><a href="{{ url_for('booking_page') }}">Book a Call</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-services">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>Custom Photoshop Plugins</li>
+                            <li>Automation Scripts</li>
+                            <li>Workflow Optimization</li>
+                            <li>UI Panel Development</li>
+                            <li>Plugin Maintenance</li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i> hello@plugincrafter.com</li>
+                            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                            <li><i class="fas fa-map-marker-alt"></i> San Francisco, CA</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Crafted with ❤️ by John Doe — Custom Photoshop Plugin Developer</p>
+                <p>Let's save you time, one smart plugin at a time.</p>
+                <p>&copy; 2023 PluginCrafter. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">
+                        {{ message }}
+                        <button class="close-flash">&times;</button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

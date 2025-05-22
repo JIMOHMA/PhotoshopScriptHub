@@ -17,8 +17,15 @@
                 <div class="logo">
                     <a href="{{ url_for('index') }}">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6Z" stroke="#0099FF" stroke-width="2"/>
-                            <path d="M7 12H17M12 7V17" stroke="#0099FF" stroke-width="2" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#69e0db" />
+                                    <stop offset="50%" stop-color="#236ddb" />
+                                    <stop offset="100%" stop-color="#5d28d1" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6Z" stroke="url(#gradient)" stroke-width="2"/>
+                            <path d="M7 12H17M12 7V17" stroke="url(#gradient)" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                         <span>PluginCrafter</span>
                     </a>
@@ -31,9 +38,11 @@
                         <li><a href="{{ url_for('index') }}#about" class="nav-link">About</a></li>
                         <li><a href="{{ url_for('shop') }}" class="nav-link">Shop</a></li>
                         <li><a href="{{ url_for('tutorial_page') }}" class="nav-link active">Tutorials</a></li>
-                        <li><a href="{{ url_for('booking_page') }}" class="nav-link">Book a Call</a></li>
                     </ul>
                 </nav>
+                <div class="nav-cta">
+                    <a href="{{ url_for('booking_page') }}" class="btn btn-primary">Book a Call</a>
+                </div>
                 <div class="mobile-menu-toggle">
                     <span></span>
                     <span></span>

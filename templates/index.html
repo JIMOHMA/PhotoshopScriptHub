@@ -17,8 +17,15 @@
                 <div class="logo">
                     <a href="{{ url_for('index') }}">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6Z" stroke="#0099FF" stroke-width="2"/>
-                            <path d="M7 12H17M12 7V17" stroke="#0099FF" stroke-width="2" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#69e0db" />
+                                    <stop offset="50%" stop-color="#236ddb" />
+                                    <stop offset="100%" stop-color="#5d28d1" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6Z" stroke="url(#gradient)" stroke-width="2"/>
+                            <path d="M7 12H17M12 7V17" stroke="url(#gradient)" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                         <span>PluginCrafter</span>
                     </a>
@@ -31,9 +38,11 @@
                         <li><a href="#about" class="nav-link" data-section="about">About</a></li>
                         <li><a href="{{ url_for('shop') }}" class="nav-link">Shop</a></li>
                         <li><a href="{{ url_for('tutorial_page') }}" class="nav-link">Tutorials</a></li>
-                        <li><a href="{{ url_for('booking_page') }}" class="nav-link">Book a Call</a></li>
                     </ul>
                 </nav>
+                <div class="nav-cta">
+                    <a href="{{ url_for('booking_page') }}" class="btn btn-primary">Book a Call</a>
+                </div>
                 <div class="mobile-menu-toggle">
                     <span></span>
                     <span></span>
@@ -47,11 +56,11 @@
     <section id="home" class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <h1>Photoshop Automation Expert. Custom Plugins & Scripts That Save You Hours.</h1>
-                <p>I help digital artists, digital creators, print shops, and eCommerce sellers/shops save hours by building custom Photoshop plugins and Scripts that automate repetitive tasks and boost productivity.</p>
+                <h1>Photoshop Automation Expert. <span style="color: var(--accent-color);">Custom Plugins & Scripts</span> That Save You Hours.</h1>
+                <p>I help digital artists, digital creators, print shops, and eCommerce sellers save hours by building custom Photoshop plugins and scripts that automate repetitive tasks and boost productivity.</p>
                 <div class="hero-cta">
-                    <a href="{{ url_for('booking_page') }}" class="btn btn-primary">🚀 Let's Build Your Plugin</a>
-                    <a href="{{ url_for('booking_page') }}" class="btn btn-secondary">🚀 Let's Build Your Scripts</a>
+                    <a href="{{ url_for('booking_page') }}" class="btn btn-primary">Let's Build Your Plugin</a>
+                    <a href="{{ url_for('booking_page') }}" class="btn btn-secondary">Let's Build Your Scripts</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -492,12 +501,20 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <a href="{{ url_for('index') }}">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6Z" stroke="#0099FF" stroke-width="2"/>
-                            <path d="M7 12H17M12 7V17" stroke="#0099FF" stroke-width="2" stroke-linecap="round"/>
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="gradient-footer" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#69e0db" />
+                                    <stop offset="50%" stop-color="#236ddb" />
+                                    <stop offset="100%" stop-color="#5d28d1" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6Z" stroke="url(#gradient-footer)" stroke-width="2"/>
+                            <path d="M7 12H17M12 7V17" stroke="url(#gradient-footer)" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                         <span>PluginCrafter</span>
                     </a>
+                    <p>Transforming Photoshop workflows with powerful automation tools</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-nav">
@@ -528,14 +545,20 @@
                             <li><i class="fas fa-envelope"></i> hello@plugincrafter.com</li>
                             <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
                             <li><i class="fas fa-map-marker-alt"></i> San Francisco, CA</li>
+                            <li class="social-links">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>Crafted with ❤️ by John Doe — Custom Photoshop Plugin Developer</p>
+                <p>Crafted with <span class="heart">❤️</span> by John Doe — Custom Photoshop Plugin Developer</p>
                 <p>Let's save you time, one smart plugin at a time.</p>
-                <p>&copy; 2023 PluginCrafter. All rights reserved.</p>
+                <p>&copy; 2025 PluginCrafter. All rights reserved.</p>
             </div>
         </div>
     </footer>

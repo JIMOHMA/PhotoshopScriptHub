@@ -1883,15 +1883,48 @@ input:focus, textarea:focus, select:focus {
 
 /* ===== Shop Page Specific Styles ===== */
 .page-header {
-  padding: 120px 0 var(--spacing-xl);
-  background-color: var(--primary-color);
-  color: white;
+  padding: 140px 0 80px;
+  background: var(--gradient-primary);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 50%;
+  top: -300px;
+  right: -200px;
+  z-index: 1;
+}
+
+.page-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/static/images/grid-pattern.svg');
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.page-header .container {
+  position: relative;
+  z-index: 2;
 }
 
 .page-header h1 {
+  margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight: 800;
   color: white;
-  margin-bottom: var(--spacing-md);
 }
 
 .shop-section {
